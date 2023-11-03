@@ -1,0 +1,786 @@
+/*!
+Theme Name: v92v2
+Theme URI: http://underscores.me/
+Author: Rafal Macyszyn
+Author URI: http://underscores.me/
+Description: v92.pl theme
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: v92v2
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+v92v2 is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Variables
+--------------------------------------------- */
+
+$content-margin-sm: 1rem;
+$content-margin-lg: 4rem;
+$content-max-width: 90rem;
+
+
+$article-max-width: 80em;
+
+
+$link-color: #000;
+$link-color-hover: #333;
+
+$blockquote-border-color: #aaa;
+
+
+$page-title-font-size-sm: 2rem;
+$page-title-font-size-lg: 3rem;
+$page-title-text-color: #987;
+
+
+$title-font-size-lg: 2rem;
+$title-font-size-sm: 1.5rem;
+$title-font-color: #000;
+$title-font-color-active: #333;
+
+$subtitle-text-color: #444;
+$subtitle-font-size-sm: 1rem;
+$subtitle-font-size-lg: 1.6rem;
+
+$title-background-color: #ddd;
+
+$body-background-color: #ccc;
+
+$menu-background-color: #000;
+$menu-text-color: #fff;
+
+$submenu-background-color: #eee;
+$submenu-text-color: #222;
+$submenu-border-color: #ccc;
+$submenu-link-text-color: #222;
+$submenu-link-text-color-hover: #444;
+
+$menu-link-text-color: #eee;
+$menu-link-text-color-hover: #fff;
+
+
+/* Font settings
+--------------------------------------------- */
+
+@import 'fonts';
+
+
+/* Inline images
+--------------------------------------------- */
+$grid-4x4-white-transparent: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAAEklEQVQIHWP4/5+BgeE/EwMDABT7AwAoc9xPAAAAAElFTkSuQmCC);
+$grid-4x4-black-transparent: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAAEklEQVQIHWNg+M/AwPCfiYEBAAwEAgG4uA+kAAAAAElFTkSuQmCC);
+
+
+/* Normalize
+--------------------------------------------- */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+ html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+
+/* Embedded content
+	 ========================================================================== */
+
+$fa-font-path: './fonts';
+@import "fontawesome/fontawesome";
+@import "fontawesome/regular";
+
+
+/* Box sizing
+--------------------------------------------- */
+
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1em;
+	padding: 0 1.5em;
+	border-left: 2px solid $blockquote-border-color;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/* Elements
+--------------------------------------------- */
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+
+
+
+/* Links
+--------------------------------------------- */
+
+a, a:visited {
+	color: $link-color;
+	text-decoration: underline dotted;
+}
+
+a:hover, a:active {
+	color: $link-color-hover;
+	text-decoration: underline;
+}
+
+
+/* Forms
+--------------------------------------------- */
+
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Navigation
+--------------------------------------------- */
+
+
+/* Posts and pages
+--------------------------------------------- */
+
+
+/* Comments
+--------------------------------------------- */
+
+.comments-area {
+	margin: 1rem;
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/* Widgets
+--------------------------------------------- */
+.widget {
+	margin: 0 0 1.5em;
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+	margin-bottom: 1.5em;
+	display: grid;
+	grid-gap: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.gallery-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+	grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+	grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+
+
+/* Sections
+	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+ body {
+	margin: 0;
+	background-color: $body-background-color;
+}
+
+#page {
+	margin: 0 auto;
+	max-width: $content-max-width;
+}
+
+@media screen and (min-width: 768px) {
+	#page {
+		display: grid;
+		grid-template-columns: 
+			1fr min-content;
+		grid-template-rows: 
+			auto auto auto;
+
+		grid-template-areas:
+		"content content menu"
+		"footer footer footer";
+	}
+
+	#page > main {
+		display: grid;
+
+		grid-template-columns: 1fr 1fr;
+		
+		body:not(.paged) & > article {
+			&:first-child {
+				grid-column: 1 / span 2;
+			}
+		}
+	}
+
+	#page > aside {
+		grid-area: menu;
+		margin-left: 3rem;
+	}
+
+	#page > footer {
+		grid-area: footer;
+	}
+
+	#page .posts-navigation {
+		grid-column: 1 / span 2;
+	}
+
+	#page .comments-area {
+		grid-column: 1 / span 2;
+	}
+
+	#page .page-header {
+		grid-column: 1 / span 2;
+	}
+}
+
+main > article {
+	margin: 1rem;
+	border: 1px solid #000;
+	background-color: #eee;
+}
+
+#page > aside {
+	padding: 0.5rem;
+}
+
+#page > footer {
+	margin: 1rem 0;
+	padding: 0.5rem;
+
+	.sep {
+		display: inline-block;
+		margin: 0 0.3rem;
+	}
+}
+
+/* Navigation links
+	 ========================================================================== */
+
+.posts-navigation {
+	margin: 1rem 0;
+	font-size: 1.4rem;
+
+	.nav-links {
+		@extend %fa-icon;
+    	@extend .far;
+
+		& > div a {
+			display: inline-block;
+			padding-left: 0.2rem;
+		}
+	}
+
+	.nav-next:before {
+		content: fa-content($fa-var-chevron-double-left);
+	}
+
+	.nav-previous:before {
+		content: fa-content($fa-var-chevron-double-right);
+	}
+}
+
+/* Sidebar
+	 ========================================================================== */
+
+
+aside {
+	section h2 {
+		font-size: 1.2rem;
+		margin-bottom: 0.3rem;
+	}
+
+	section ul, section ol {
+		margin-top: 0.3rem;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+
+/* Logo
+	 ========================================================================== */
+
+body > header {
+	padding-top: 0.5rem;
+	background-color: $title-background-color;
+}
+
+.site-branding > h1 {
+	font-size: $page-title-font-size-sm;
+	font-weight: 800;
+	text-align: center;
+
+	margin: 1rem 0 0 0;
+
+	a, a:hover, a:active, a:visited {
+		color: $page-title-text-color;
+		text-decoration: none;
+	}
+
+	a:hover, a:active {
+		text-decoration: underline dotted;
+	}
+
+	@media screen and (min-width: 768px) {
+		font-size: $page-title-font-size-lg;
+	}
+}
+
+.site-description {
+	margin-top: 0;
+
+	text-align: center;
+	font-size: $subtitle-font-size-sm;
+	color: $subtitle-text-color;
+
+	@media screen and (min-width: 768px) {
+		font-size: $subtitle-font-size-lg;
+	}
+}
+
+/* Top menu
+	 ========================================================================== */
+
+nav .menu {
+	display: flex;
+	background-color: $menu-background-color;
+	color: $submenu-text-color;
+}
+
+nav .menu > li {
+	position: relative;
+}
+
+nav #top-menu a {
+	color: $menu-link-text-color;
+	text-decoration: none;
+
+	&:hover, &:active {
+		color: $menu-link-text-color-hover;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	nav #top-menu .sub-menu a {
+		color: $submenu-link-text-color;
+
+		&:hover, &:active {
+			color: $submenu-link-text-color-hover;
+		}
+	}
+}
+
+nav .menu > li {
+	list-style: none;
+
+	padding: 0;
+	margin: 0.5rem;
+
+	font-size: 1.2rem;
+	font-weight: 600;
+
+	@media screen and (min-width: 768px) {
+		margin: 0.5rem 2rem;
+
+		&.menu-item-has-children::after {
+			font-family: 'Font Awesome 5 Pro';
+  			font-weight: 400;
+			color: $menu-link-text-color;
+			content: fa-content($fa-var-caret-down);
+		}
+	
+		& > .sub-menu {
+			display: none;
+			background-color: $submenu-background-color;
+			color: $submenu-text-color;
+
+			position: absolute;
+			padding: 1rem;
+			width: max-content;
+	
+			border: 1px solid $submenu-border-color;
+		}
+	
+		&:hover > .sub-menu, &:active > .sub-menu, &:focus > .sub-menu {
+			display: block;
+		}
+
+		.sub-menu li {
+			padding-bottom: 0.2rem;
+			list-style: none;
+		}		
+	}
+}
+
+
+
+/* Entry header
+	 ========================================================================== */
+
+
+.entry-header-wrapper {
+	position: relative;
+	padding: 2em 0;
+
+	.entry-header {
+		margin: 0 1.5em;
+		padding: 0.5em 0.75em;
+
+		background-color: #ffffff60;
+
+		position: relative;
+		z-index: 2;
+		
+		& > a {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		padding: 3em 0;
+
+		.entry-header {
+			margin: 0 3em;
+			padding: 0.5em 1em;
+		}
+	}
+}
+
+.entry-title {
+	text-align: center;
+	font-size: $title-font-size-sm;
+	color: $title-font-color;
+
+	a, a:visited {
+		text-decoration: underline dotted;
+	}
+
+	a:hover, a:active {
+		color: $title-font-color-active;
+	}
+
+	@media screen and (min-width: 768px) {
+		font-size: $title-font-size-lg;
+	}
+}	
+
+.post-thumbnail {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.entry-meta {
+	text-align: right;
+
+	.published, .updated, .byline {
+		display: inline-block;
+		margin-right: 0.5rem;
+	}
+}
+
+/* Entry footer
+	 ========================================================================== */
+
+.entry-footer {
+	padding: 1rem 0.5rem 0.5rem 0.5rem;
+
+	span + * ::before {
+		content: "\2022";
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+		display: inline-block;
+	}
+}
+
+/* Entry content
+	 ========================================================================== */
+
+.entry-content {
+	padding: 1rem;
+}
+
+.more-link {
+	font-size: 1.2rem;
+}
