@@ -464,10 +464,8 @@ a:hover, a:active {
 @media screen and (min-width: 768px) {
 	#page {
 		display: grid;
-		grid-template-columns: 
-			1fr min-content;
-		grid-template-rows: 
-			auto auto auto;
+		grid-template-columns: minmax(75%, 1fr) min-content;
+		grid-template-rows: auto auto auto;
 
 		grid-template-areas:
 		"content content menu"
@@ -480,7 +478,7 @@ a:hover, a:active {
 		grid-template-columns: 1fr 1fr;
 		
 		body:not(.paged) & > article {
-			&:first-child {
+			&:first-of-type {
 				grid-column: 1 / span 2;
 			}
 		}
