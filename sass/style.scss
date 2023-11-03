@@ -57,6 +57,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Variables
 --------------------------------------------- */
 
+
+
 $content-margin-sm: 1rem;
 $content-margin-lg: 4rem;
 $content-max-width: 90rem;
@@ -65,41 +67,43 @@ $content-max-width: 90rem;
 $article-max-width: 80em;
 
 
-$link-color: #000;
-$link-color-hover: #333;
+$link-color: #012441;
+$link-color-hover: #01447B;
 
-$blockquote-border-color: #aaa;
+$blockquote-border-color: #1B4312;
 
 
 $page-title-font-size-sm: 2rem;
 $page-title-font-size-lg: 3rem;
-$page-title-text-color: #987;
+$page-title-text-color: #161A1D;
 
 
 $title-font-size-lg: 2rem;
 $title-font-size-sm: 1.5rem;
-$title-font-color: #000;
-$title-font-color-active: #333;
+$title-font-color: #111316;
+$title-font-color-active: #323941;
 
-$subtitle-text-color: #444;
+$subtitle-text-color: #374048;
 $subtitle-font-size-sm: 1rem;
 $subtitle-font-size-lg: 1.6rem;
 
-$title-background-color: #ddd;
+$title-background-color: #BEC6CD;
 
-$body-background-color: #ccc;
+$body-background-color: #C2CDD2;
 
-$menu-background-color: #000;
-$menu-text-color: #fff;
+$menu-background-color: #012849;
+$menu-text-color: #FAFBFB;
 
-$submenu-background-color: #eee;
-$submenu-text-color: #222;
-$submenu-border-color: #ccc;
-$submenu-link-text-color: #222;
-$submenu-link-text-color-hover: #444;
+$submenu-background-color: #011F39;
+$submenu-text-color: #A9B3BC;
+$submenu-border-color: #BEC6CD;
+$submenu-link-text-color: #A9B3BC;
+$submenu-link-text-color-hover: #939FAC;
 
-$menu-link-text-color: #eee;
-$menu-link-text-color-hover: #fff;
+$menu-link-text-color: #D4D9DE;
+$menu-link-text-color-hover: #A9B3BC;
+
+$article-background-color: #EDF0F2;
 
 
 /* Font settings
@@ -507,7 +511,7 @@ a:hover, a:active {
 main > article {
 	margin: 1rem;
 	border: 1px solid #000;
-	background-color: #eee;
+	background-color: $article-background-color;
 }
 
 #page > aside {
