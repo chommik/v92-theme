@@ -461,6 +461,10 @@ a:hover, a:active {
 	max-width: $content-max-width;
 }
 
+#page > aside {
+	padding: 0.5rem;
+}
+
 @media screen and (min-width: 768px) {
 	#page {
 		display: grid;
@@ -485,7 +489,7 @@ a:hover, a:active {
 	}
 
 	#page > aside {
-		grid-area: menu;
+		grid-column: 2 / span 1;
 		margin-left: 3rem;
 	}
 
@@ -512,9 +516,7 @@ main > article {
 	background-color: $article-background-color;
 }
 
-#page > aside {
-	padding: 0.5rem;
-}
+
 
 #page > footer {
 	margin: 1rem 0;
